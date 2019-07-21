@@ -1,0 +1,22 @@
+﻿@model AlbumRating.ViewModels.Models.DeleteAlbumViewModel
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h2>Delete Album</h2>
+
+<div>
+    <hr />
+    <form asp-action="Delete">
+
+        <div class="form-group">
+            <label asp-for="Albums" class="control-label"></label>
+            <select asp-for="AlbumId" asp-items="@(new SelectList(Model.Albums,"AlbumId","Title"))"></select>
+            <span asp-validation-for="Albums" class="text-danger"></span>
+        </div>
+
+
+        <input type="submit" value="Delete" class="btn btn-default" />
+    </form>
+</div>

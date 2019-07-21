@@ -1,0 +1,18 @@
+﻿@model AlbumRating.ViewModels.Models.IndexAllRatedAlbumsViewModel
+
+@{
+    ViewData["Title"] = "View";
+}
+
+<h2>Your Rated Albums</h2>
+
+<hr />
+
+@foreach (var a in Model.RatedAlbums.OrderByDescending(x => x.Rating))
+{
+    var album = Model.Albums.Find(x => x.AlbumId == a.AlbumId);
+
+    string print = $"{album.Title} by {album.Artist} | rated: {a.Rating} / {Model.maxRating}";
+
+    <h4>@print</h4>
+}
