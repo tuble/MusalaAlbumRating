@@ -20,5 +20,7 @@
 */
         public ICollection<UserRatedAlbum> UserRatedAlbums { get; set; }
 
+        [Key]
+        public string UserId { get; set; }
     }
 }

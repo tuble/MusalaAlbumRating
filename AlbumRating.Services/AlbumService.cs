@@ -40,7 +40,7 @@
             this.context = context;
         }
 
-        public int CreateAlbum(string title, string artist, int year, int genreId) // add to db
+        public void CreateAlbum(string title, string artist, int year, int genreId) // add to db
         {
             var album = new Album() { Title = title, Artist = artist, Year = year, GenreId = genreId, TimesRated = 0};
 
@@ -48,13 +48,12 @@
             {
                 if (albumInDb.Title == album.Title && albumInDb.Artist == albumInDb.Artist)
                 {
-                    return 0;
+                    throw new Exception ("This Album already exists in the database!");
                 }
             }
 
             this.context.Albums.Add(album);
             this.context.SaveChanges();
-            return album.AlbumId;
         }
 
         public int DeleteAlbum(int albumId) // delete from db

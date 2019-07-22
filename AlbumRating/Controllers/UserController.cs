@@ -70,7 +70,7 @@
             var currentUserName = this.User.Identity.Name;
             var currentUser = this.userService.GetUserByName(currentUserName);
 
-            if (this.userService.RateAlbum(albumId, rating, currentUser.Id) == 0)
+            if (this.userService.RateAlbum(albumId, rating, currentUser.Id).Equals("0")) // handle exception
             {
                 var alreadyRated = viewModel.Albums.FirstOrDefault(x => x.AlbumId == albumId);
                 return (this.RedirectToAction("AlbumAlreadyRated", new { error = $"You've already rated {alreadyRated.Title} by {alreadyRated.Artist}" }));

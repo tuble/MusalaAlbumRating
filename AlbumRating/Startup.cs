@@ -79,7 +79,7 @@
             {
                 routes.MapRoute(
                     name: "default",
-                    template: "{controller=Album}/{action=ListAll}");
+                    template: "{controller=Album}/{action=ListAll}");  // default home page
             });
         }
     }

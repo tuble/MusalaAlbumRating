@@ -33,10 +33,10 @@ namespace AlbumRating.Services
             return this.context.UserRatedAlbums.Where(x => x.UserId == userId && x.Album != null).ToList();
         }
 
-        public int RateAlbum(int albumId, int rating, string userId)
+        public string RateAlbum(int albumId, int rating, string userId)
         {
             var album = this.context.Albums.FirstOrDefault(x => x.AlbumId == albumId);
-            var user = this.context.Users.FirstOrDefault(x => x.Id == userId);
+            var user = this.context.Users.FirstOrDefault(x => x.UserId == userId);
 
             var ratedAlbum = new UserRatedAlbum() { User = user, UserId = userId, Album = album, AlbumId = album.AlbumId, Rating = rating };
 
@@ -44,7 +44,7 @@ namespace AlbumRating.Services
             {
                 if (ratedInDb.AlbumId == ratedAlbum.AlbumId && ratedInDb.UserId == ratedAlbum.UserId)
                 {
-                    return 0;
+                    return "0";
                 }
             }
 
@@ -53,7 +53,7 @@ namespace AlbumRating.Services
             this.context.UserRatedAlbums.Add(ratedAlbum);
             this.context.SaveChanges();
 
-            return int.Parse(user.Id);
+            return user.UserId;
         }
 
     }

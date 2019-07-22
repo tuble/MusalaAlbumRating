@@ -4827,11 +4827,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Programming\\it-career\\course-project\\AlbumRatingProject\\AlbumRating.ViewModels\\AlbumRating.ViewModels.csproj",
+      "projectUniqueName": "C:\\Programming\\MusalaProject\\AlbumRating.ViewModels\\AlbumRating.ViewModels.csproj",
       "projectName": "AlbumRating.ViewModels",
-      "projectPath": "C:\\Programming\\it-career\\course-project\\AlbumRatingProject\\AlbumRating.ViewModels\\AlbumRating.ViewModels.csproj",
+      "projectPath": "C:\\Programming\\MusalaProject\\AlbumRating.ViewModels\\AlbumRating.ViewModels.csproj",
       "packagesPath": "C:\\Users\\YOUTU\\.nuget\\packages\\",
-      "outputPath": "C:\\Programming\\it-career\\course-project\\AlbumRatingProject\\AlbumRating.ViewModels\\obj\\",
+      "outputPath": "C:\\Programming\\MusalaProject\\AlbumRating.ViewModels\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -4850,11 +4850,11 @@
       "frameworks": {
         "netcoreapp2.1": {
           "projectReferences": {
-            "C:\\Programming\\it-career\\course-project\\AlbumRatingProject\\AlbumRating.Data.Models\\AlbumRating.Data.Models.csproj": {
-              "projectPath": "C:\\Programming\\it-career\\course-project\\AlbumRatingProject\\AlbumRating.Data.Models\\AlbumRating.Data.Models.csproj"
+            "C:\\Programming\\MusalaProject\\AlbumRating.Data.Models\\AlbumRating.Data.Models.csproj": {
+              "projectPath": "C:\\Programming\\MusalaProject\\AlbumRating.Data.Models\\AlbumRating.Data.Models.csproj"
             },
-            "C:\\Programming\\it-career\\course-project\\AlbumRatingProject\\AlbumRating.Data\\AlbumRating.Data.csproj": {
-              "projectPath": "C:\\Programming\\it-career\\course-project\\AlbumRatingProject\\AlbumRating.Data\\AlbumRating.Data.csproj"
+            "C:\\Programming\\MusalaProject\\AlbumRating.Data\\AlbumRating.Data.csproj": {
+              "projectPath": "C:\\Programming\\MusalaProject\\AlbumRating.Data\\AlbumRating.Data.csproj"
             }
           }
         }

@@ -68,7 +68,7 @@
             {
                 foreach (var user in this.userService.GetAll())
                 {
-                    var a = rated.FirstOrDefault(x => x.AlbumId == album.AlbumId && x.UserId == user.Id);
+                    var a = rated.FirstOrDefault(x => x.AlbumId == album.AlbumId && x.UserId == user.UserId);
                     if (a != null)
                     {
                         if (!viewModel.AlbumsWithRating.Keys.Contains<Album>(a.Album))
@@ -113,12 +113,15 @@
         [HttpPost]
         public IActionResult Create(string title, string artist, int year, int genreId)
         {
-            if (this.albumService.CreateAlbum(title, artist, year, genreId) == 0)
+            try
+            {
+                return this.RedirectToAction("ListAll");
+            }
+            catch(Exception e)
             {
                 return this.RedirectToAction("AlbumAlreadyAdded", new { error = $"Album {title} by {artist} is already in the database" });
             }
 
-            return this.RedirectToAction("ListAll");
         }
 
         /// <summary>
