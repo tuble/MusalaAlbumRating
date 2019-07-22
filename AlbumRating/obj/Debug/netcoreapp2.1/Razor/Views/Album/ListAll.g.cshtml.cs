@@ -85,7 +85,7 @@ using AlbumRating.Models;
             WriteLiteral("    <h4>");
             EndContext();
             BeginContext(584, 94, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "b478cb27e2fb43739e1349c5c3d89deb", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "8d5bb7c8c3824ca1be43472a276217dc", async() => {
                 BeginContext(669, 5, false);
 #line 24 "C:\Programming\MusalaProject\AlbumRating\Views\Album\ListAll.cshtml"
                                                                                        Write(print);
