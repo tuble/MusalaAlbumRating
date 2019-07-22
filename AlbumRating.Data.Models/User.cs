@@ -13,14 +13,18 @@
             this.UserRatedAlbums = new List<UserRatedAlbum>();
         }
 
-/*        [Key]
-        public int UserId { get; set; } // only keep this ID
+        /*        [Key]
+                public int UserId { get; set; } // only keep this ID
 
-        public string Name { get; set; }
-*/
-        public ICollection<UserRatedAlbum> UserRatedAlbums { get; set; }
+                public string Name { get; set; }
+                */
+
 
         [Key]
-        public string UserId { get; set; }
+        public int UserId { get; set; }
+
+        public ICollection<UserRatedAlbum> UserRatedAlbums { get; set; }
+
+
     }
 }

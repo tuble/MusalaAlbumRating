@@ -9,7 +9,7 @@
     public class UserRatedAlbum
     {
         [Key, Column]
-        public string UserId { get; set; }
+        public int UserId { get; set; }
 
         [Key, Column(Order = 1)]
         public int AlbumId { get; set; }

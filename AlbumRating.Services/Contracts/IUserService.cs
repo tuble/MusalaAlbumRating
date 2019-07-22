@@ -11,9 +11,9 @@
 
         User GetUserByName(string name);
 
-        string RateAlbum(int albumId, int rating, string userId);
+        string RateAlbum(int albumId, int rating, int userId);
 
-        List<UserRatedAlbum> GetAllRated(string userId);
+        List<UserRatedAlbum> GetAllRated(int userId);
 
     }
 }

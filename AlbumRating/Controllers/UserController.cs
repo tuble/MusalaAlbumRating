@@ -70,7 +70,7 @@
             var currentUserName = this.User.Identity.Name;
             var currentUser = this.userService.GetUserByName(currentUserName);
 
-            if (this.userService.RateAlbum(albumId, rating, currentUser.Id).Equals("0")) // handle exception
+            if (this.userService.RateAlbum(albumId, rating, currentUser.UserId).Equals("0")) // handle exception
             {
                 var alreadyRated = viewModel.Albums.FirstOrDefault(x => x.AlbumId == albumId);
                 return (this.RedirectToAction("AlbumAlreadyRated", new { error = $"You've already rated {alreadyRated.Title} by {alreadyRated.Artist}" }));
@@ -101,7 +101,7 @@
             var currentUser = this.userService.GetUserByName(currentUserName);
 
             var viewModel = new IndexAllRatedAlbumsViewModel();
-            viewModel.RatedAlbums = this.userService.GetAllRated(currentUser.Id).OrderBy(x=> x.Rating).ToList();
+            viewModel.RatedAlbums = this.userService.GetAllRated(currentUser.UserId).OrderBy(x=> x.Rating).ToList();
             viewModel.Albums = this.albumService.GetAll();
             return this.View(viewModel);
         }

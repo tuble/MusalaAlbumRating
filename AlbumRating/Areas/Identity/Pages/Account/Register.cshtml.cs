@@ -72,13 +72,14 @@ namespace AlbumRating.Areas.Identity.Pages.Account
                 //Checking old IDs from manager
                 if (_userManager.Users.Count() > 0)
                 {
-                    string lastUserId = _userManager.Users.Max(x => x.Id );
-                    string nextId = (Int32.Parse(lastUserId) + 1).ToString();
+                    int lastUserId = _userManager.Users.Max(x => x.UserId);
+                    int nextId = Convert.ToInt32(lastUserId) + 1;
+
                     user = new User { UserName = Input.Email, Email = Input.Email, UserId = nextId };
                 }
                 else
                 {
-                    user = new User { UserName = Input.Email, Email = Input.Email, UserId = "0"};
+                    user = new User { UserName = Input.Email, Email = Input.Email, Id = "0"};
                 }
                 var result = await _userManager.CreateAsync(user, Input.Password);
                 if (result.Succeeded)

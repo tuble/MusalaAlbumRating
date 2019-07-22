@@ -68,7 +68,7 @@
             {
                 foreach (var user in this.userService.GetAll())
                 {
-                    var a = rated.FirstOrDefault(x => x.AlbumId == album.AlbumId && x.UserId == user.UserId);
+                    var a = rated.FirstOrDefault(x => x.AlbumId == album.AlbumId && x.UserId == user.UserId); // LIST OF ALBUMS
                     if (a != null)
                     {
                         if (!viewModel.AlbumsWithRating.Keys.Contains<Album>(a.Album))
