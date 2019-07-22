@@ -30,7 +30,7 @@
 
     public interface IAlbumsService
     {
-        void CreateAlbum(string title, string artist, int year, int genreId);
+        int CreateAlbum(string title, string artist, int year, int genreId);
 
         int DeleteAlbum(int albumId);
 

@@ -113,15 +113,12 @@
         [HttpPost]
         public IActionResult Create(string title, string artist, int year, int genreId)
         {
-            try
-            {
-                return this.RedirectToAction("ListAll");
-            }
-            catch(Exception e)
+            if (this.albumService.CreateAlbum(title, artist, year, genreId) == 0)
             {
                 return this.RedirectToAction("AlbumAlreadyAdded", new { error = $"Album {title} by {artist} is already in the database" });
             }
 
+            return this.RedirectToAction("ListAll");
         }
 
         /// <summary>
